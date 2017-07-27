@@ -26,7 +26,7 @@ docker cp $CONTAINER_ID:zap/output.xml ./
 #integrate elastic search
 echo "ELK stack"
 git clone https://github.com/deviantony/docker-elk
-cd docker-elk && docker-compose stop && docker-compose rm -f || /bin/true && docker-compose up -d
+cp output.json docker-elk/ && cd docker-elk && docker-compose stop && docker-compose rm -f || /bin/true && docker-compose up -d
 
 #parse logs - add indices - push
 echo "install jq"
