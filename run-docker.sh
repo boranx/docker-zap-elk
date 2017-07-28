@@ -26,6 +26,7 @@ docker cp $CONTAINER_ID:zap/output.xml ./
 echo "ELK stack"
 git clone https://github.com/deviantony/docker-elk
 cp output.json docker-elk/ && cd docker-elk && docker-compose stop && docker-compose rm -f || /bin/true && docker-compose up -d
+until curl localhost:9200; do echo "Waiting for Elastic Search"; sleep 2; done
 
 echo "parse output.json - add indices"
 cat output.json | jq -c '.[] | {"index": {"_index": "bookmarks", "_type": "bookmark", "_id": .id}}, .' | curl -XPOST localhost:9200/_bulk --data-binary @-
