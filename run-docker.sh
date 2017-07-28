@@ -23,14 +23,10 @@ docker cp $CONTAINER_ID:zap/output.html ./
 
 docker cp $CONTAINER_ID:zap/output.xml ./
 
-#integrate elastic search
 echo "ELK stack"
 git clone https://github.com/deviantony/docker-elk
 cp output.json docker-elk/ && cd docker-elk && docker-compose stop && docker-compose rm -f || /bin/true && docker-compose up -d
 
-#parse logs - add indices - push
-echo "install jq"
-sudo apt-get install jq -y
 echo "parse output.json - add indices"
 cat output.json | jq -c '.[] | {"index": {"_index": "bookmarks", "_type": "bookmark", "_id": .id}}, .' | curl -XPOST localhost:9200/_bulk --data-binary @-
 
