@@ -1,5 +1,5 @@
 # docker-zap-elk
-![Docker Zap Proxy - How to use ?](https://s1.gifyu.com/images/ezgif.com-video-cutter.1-1.gif)]
+<img src="zap-proxy.gif?raw=true" width="720px">
 
 
 Automated Security Tests via Dockerised Owasp-Zap and zap-cli, Results in Kibana. 
