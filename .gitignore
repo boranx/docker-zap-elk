@@ -1,0 +1,69 @@
+### Artifacts
+*.html
+*.json
+*.xml
+docker-elk/
+
+### OSX
+._*
+.AppleDouble
+.DS_Store
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+### Windows
+*.exe
+*.dll
+*.msi
+
+### VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+### SublimeText
+*.sublime-workspace
+
+### Build
+dist
+
+### Python cache
+*.pyc
+__pycache__
+.cache
+
+### Logs
+*.log
+logs
+
+### ui
+ui/npm-debug.log
+ui/node_modules/
+ui/dist/
+ui/test/unit/coverage/
+
+### Security
+*.srl
+*.crt
+*.csr
+*.key
+*.pub
+*.pem
+*.swp
+
+### Terraform
+*tfstate*
+.terraform
+
+### Ansible
+*.retry
+
+### Others
+*.zip
+*.todo
+*.pid
+
+### Vagrant
+.vagrant
