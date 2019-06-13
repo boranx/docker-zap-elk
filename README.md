@@ -23,7 +23,7 @@ Just pass URL Parameter to the script. The scan can take more than 30 mins. beca
 ./run-docker.sh https://www.example.com/
 ```
 
-* Kibana is running on port 5601. just browse : http://localhost:5601
+* Kibana is running on port 5601. just browse : http://localhost:5601  (username: elastic, pass: changeme)
 
 * Import `view.json` to your kibana in order to see a good dashboard. (Optional)
 
